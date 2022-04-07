@@ -1,0 +1,30 @@
+#formCad{
+    font-size: ;
+    width: 40%;
+}
+#formEsq{
+    width: 100%;
+}
+#formDir{
+    margin-top: -480px;
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+
+#btnLimpar{
+    color: white;
+    background-color: red;
+    border-radius: 0%;
+}
+
+#btnEnviar{
+    color: white;
+    background-color: darkgreen;
+    border-radius: 0%;
+}
+
+button{
+    margin: 0 15px;
+}
