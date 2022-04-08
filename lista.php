@@ -12,8 +12,13 @@ $resultSet = $conn->query($instrucaoSQL);
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Bootstrap -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- CSS Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- JS Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     </head>
 <body>
     <div class="container" >
@@ -34,6 +39,7 @@ $resultSet = $conn->query($instrucaoSQL);
                                         <th scope="col">CPF
                                         <th scope="col">Telefone
                                         <th scope="col">E-mail
+                                        <th scope="col">Editar
                                         
                                     </tr>
                                 </thead>
@@ -48,6 +54,7 @@ $resultSet = $conn->query($instrucaoSQL);
                                 <td><?php echo $row['cpf_usuario']; ?></td>
                                 <td><?php echo $row['telefone_usuario']; ?></td>
                                 <td><?php echo $row['email_usuario']; ?></td>
+                                <td><button class="btn" type="submit"><i class="bi bi-pencil-fill"></i></button></td>
                                 
                             </tr>
 <?php

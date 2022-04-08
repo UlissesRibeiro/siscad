@@ -6,11 +6,10 @@
     width: 100%;
 }
 #formDir{
-    margin-top: -480px;
-    text-align: center;
+    width: 100%;
 }
 h1{
-    text-align: center;
+    text-align:;
 }
 
 #btnLimpar{
@@ -20,6 +19,18 @@ h1{
 }
 
 #btnEnviar{
+    color: white;
+    background-color: darkgreen;
+    border-radius: 0%;
+}
+
+#btnCadastro{
+    color: white;
+    background-color: red;
+    border-radius: 0%;
+}
+
+#btnPesquisa{
     color: white;
     background-color: darkgreen;
     border-radius: 0%;
