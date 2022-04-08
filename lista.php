@@ -2,8 +2,7 @@
 
 include_once 'conn.php';
 
-$instrucaoSQL = "Select nome_usuario,sobrenome_usuario,cpf_usuario,
-                telefone_usuario,email_usuario From funcionarios";
+$instrucaoSQL = "Select * From funcionarios";
 $resultSet = $conn->query($instrucaoSQL);
 ?>
 
@@ -17,12 +16,12 @@ $resultSet = $conn->query($instrucaoSQL);
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
     </head>
 <body>
-    <div class="container">
+    <div class="container" >
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="card">
+                        <div class="card"  >
                             <div class="card-header">
                                 <h3>Listagem de Funcionários</h3>
                             </div>
