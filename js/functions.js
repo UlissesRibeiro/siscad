@@ -1,5 +1,7 @@
 //habilitar formulario de cadastro
-function cadastraEquipamento(){
+
+//bloco antigo usando checkbox
+/*function cadastraEquipamento(){
     var checkbox = document.getElementById("sim");
     var form = document.getElementById("formulario");
 
@@ -9,7 +11,8 @@ function cadastraEquipamento(){
     else{
         form.style.display = "none";
     }
-}
+}*/
+
 
 //habilitar equipamento a ser cadastrado
 function desabilitarMaquina(valor){

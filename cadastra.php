@@ -7,21 +7,37 @@ require_once 'conn.php';
         $cpf=$_POST['cpf_usuario'];
         $telefone=$_POST['telefone_usuario'];
         $email=$_POST['email_usuario'];
+        $perfil=$_POST['perfil_trabalho'];
+        //bloco para verificar se o cpf já está cadastrado
+        $stmt = $conn->prepare("SELECT * from funcionarios where cpf_usuario = $cpf");
+        $stmt->execute();
+        $count = $stmt->rowcount();
+        //se cadastrado retorna a mensagem, com base na verificação da query
+        if($count > 0){
+            echo "cpf cadastrado!";
+        }
+        //se não, avança no cadastro
+        else{
+            $stmt = $conn->prepare("INSERT INTO funcionarios (nome_usuario,sobrenome_usuario,cpf_usuario,telefone_usuario,email_usuario,perfil_trabalho)
+                            VALUES(?,?,?,?,?,?)");
 
-        $stmt = $conn->prepare("INSERT INTO funcionarios (nome_usuario,sobrenome_usuario,cpf_usuario,telefone_usuario,email_usuario)
-                            VALUES(?,?,?,?,?)");
+            $resultSet = $stmt->execute([$_POST['nome_usuario'],$_POST['sobrenome_usuario'],$_POST['cpf_usuario'],
+            $_POST['telefone_usuario'], $_POST['email_usuario'],$_POST['perfil_trabalho']]);
+            
+            if($resultSet){
+                echo "Os dados foram inseridos com sucesso.";
+                }else{
+                echo "Ocorreu um erro e não foi possível inserir os dados.";
+                }
+                //Destruindo o objecto statement e fechando a conexão
+                $stmt = null;
+                $conn = null;
 
-        $resultSet = $stmt->execute([$_POST['nome_usuario'],$_POST['sobrenome_usuario'],$_POST['cpf_usuario'],
-        $_POST['telefone_usuario'], $_POST['email_usuario']]);
-                            
-        if($resultSet){
-            echo "Os dados foram inseridos com sucesso.";
-            }else{
-            echo "Ocorreu um erro e não foi possível inserir os dados.";
-            }
-            //Destruindo o objecto statement e fechando a conexão
-            $stmt = null;
-            $conn = null;
+        }
 
+
+
+
+        
 
 ?>

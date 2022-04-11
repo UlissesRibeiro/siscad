@@ -24,13 +24,14 @@ require_once 'conn.php';
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container d-flex justify-content-center" style="padding-top: 20px;">
-        <div class="col-lg-6 ms-auto" style="padding-top:;" id="formDir">
-            <h1>Pesquisa</h1>
-            <form id="" class="row g-3 " action="" method="post">
-                <label for="nome_usuario">Nome</label> 
+<div class="container d-flex justify-content-center" style="padding-top: 20px;">
+    <form id="formCad" class="row g-3 " action="lista.php" method="post">
+            <h1></h1>
+            <form id="formPesquisa" class="container row g-3 " action="lista.php" method="post">
+            <div class="form-floating mb-3 col-md-12">
                 <input class="form-control" type="text" name="nome_usuario" id="nome_usuario" placeholder="nome" minlength="1" maxlength="15" required>
-                
+                <label for="nome_usuario">Nome</label> 
+            </div>
                 <div class="btn-group" role="group">
                     <button id="btnLimpar" type="reset" class="btn"><i class="bi bi-x-circle-fill"> Limpar</i></button>
                     <button id="btnEnviar" type="submit" class="btn"><i class="bi bi-search"> Pesquisar</i></button>
@@ -43,7 +44,11 @@ require_once 'conn.php';
                 $instrucaoSQL = "Select * From funcionarios where nome_usuario='$nome'";
                 $resultSet = $conn->query($instrucaoSQL);?>
 
-<div class="container">
+       
+                
+
+
+<!--<div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
@@ -65,12 +70,12 @@ require_once 'conn.php';
                                         
                                     </tr>
                                 </thead>
-                            <tbody>
+                            <tbody>-->
 
         <?php
         while ($row = $resultSet->fetch(PDO::FETCH_ASSOC)):
     ?>
-                                <tr>
+                                <!--<tr>
                                     
                                     <td><?php echo $row['nome_usuario']; ?></td>
                                     <td><?php echo $row['sobrenome_usuario']; ?></td>
@@ -79,11 +84,11 @@ require_once 'conn.php';
                                     <td><?php echo $row['email_usuario']; ?></td>
 
                                     
-                                </tr>
+                                </tr>-->
     <?php
     endwhile;
     ?>
-                            </tbody>
+                            <!--</tbody>
                             </table>
                         </div>
                     </div>
@@ -91,7 +96,7 @@ require_once 'conn.php';
             </div>
         </div>
     </div>
-    </div>
+    </div>-->
 
         
     </form>

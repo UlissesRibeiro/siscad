@@ -30,28 +30,13 @@ require_once 'conn.php';
         <div>
 
         <h1>Sistema de Cadastro - v.0.1</h1>
-        <div class="btn-group container" role="group">
+        <!--<div class="btn-group container" role="group">
             <button type="submit" style="background-color:darkgreen;color:white;" id="btnCad" class="btn"><i class="bi bi-pencil-square"></i> Cadastrar</button>
             <button type="submit"  style="background-color:darkblue;color:white;" id="btnPes" class="btn"><i class="bi bi-search"></i> Pesquisar</button>
 
-        </div>
+        </div>-->
         </div>
 
     </div>
-    <div id="conteudo" >
 
-</div>
-<script>
-    $(document).ready(function(){
-        $("#btnCad").click(function(){
-            $("#conteudo").load("formCadastro.php");
-        });
-    });
-    $(document).ready(function(){
-        $("#btnPes").click(function(){
-            $("#conteudo").load("formPesquisa.php");
-        });
-    });
-</script>
-</body>
-</html>
+    

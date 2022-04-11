@@ -1,8 +1,11 @@
 <?php
 
 include_once 'conn.php';
+include_once 'cfg/nav.php';
 
-$instrucaoSQL = "Select * From funcionarios";
+$nome=$_POST['nome_usuario'];
+
+$instrucaoSQL = "Select * From funcionarios where nome_usuario='$nome'";
 $resultSet = $conn->query($instrucaoSQL);
 ?>
 
@@ -21,14 +24,14 @@ $resultSet = $conn->query($instrucaoSQL);
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     </head>
 <body>
-    <div class="container" >
+<div class="container d-flex justify-content-center" style="padding-top: 20px;">
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="card"  >
+                    <div class="col-md-12">
+                        <div class=" card" style="width:auto;" >
                             <div class="card-header">
-                                <h3>Listagem de Funcionários</h3>
+                                <h3 style="text-align:center;">Listagem de Funcionários</h3>
                             </div>
                         <div class="card-body">
                             <table class="table">
@@ -65,9 +68,13 @@ endwhile;
                         </div>
                     </div>
                 </div>
+                <div class="btn btn-sm">
+                    <a class="btn" style="background-color:aqua;color:black;border-color:black;" type="button" href="index.php"><i class="bi bi-house-fill"></i> Voltar</a>
+                </div>
             </div>
         </div>
     </div>
     </div>
+    
 </body>
     </html>

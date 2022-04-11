@@ -17,6 +17,7 @@ require_once 'conn.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- Icones Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
 
     <title>Sistema de Cadastro - v.0.1</title>
     <script src="js/functions.js"></script>
@@ -52,26 +53,30 @@ require_once 'conn.php';
         <label for="telefone_usuario"><i class="bi bi-telephone-fill"> Telefone</i></label>
         </div>
         <br><br>
-        <div>
+        <div id="perfil">
         <label for="perfil">Perfil de trabalho : </label>
-        <input type="checkbox" name="hibrido" id="hibrido" value="hibrido">
-        <label for="hibrido">hibrido</label>
+        <input type="radio" name="perfil_trabalho" id="hibrido" value="hibrido">
+        <label style="text-transform: capitalize;" for="hibrido">hibrido</label>
 
-        <input type="checkbox" name="presencial" id="presencial" value="presencial">
-        <label for="presencial">presencial</label>
+        <input type="radio" name="perfil_trabalho" id="presencial" value="presencial">
+        <label style="text-transform: capitalize;" for="presencial">presencial</label>
 
-        <input type="checkbox" name="home-office" id="home-office" value="home-office">
-        <label for="home-office">home-office</label>
+        <input type="radio" name="perfil_trabalho" id="home-office" value="home-office">
+        <label style="text-transform: capitalize;" for="home-office">home-office</label>
         </div>
         <?php
 
         ?>
         <!-- chamada para função de habilitar cadastro de equipamentos -->
         <p>Deseja cadastrar equipamentos?
-            <input type="checkbox" name="sim" id="sim" value="sim" onclick="cadastraEquipamento()">
+            <!-- bloco de codigo se for usar checkbox -->
+            <!--<input type="checkbox" name="sim" id="sim" value="sim" onclick="cadastraEquipamento()">
             <label for="sim">SIM</label>
             <input type="checkbox" name="nao" id="nao" value="nao">
-            <label for="nao">NÃO</label></p>
+            <label for="nao">NÃO</label></p>-->
+
+            <label for="">Sim</label> <input type="radio" name="showDiv" id="sim">
+            <label for="">Não</label> <input type="radio" name="showDiv" id="nao">
 
             <!-- Formulario de equipamentos -->
             <div id="formulario" class="row" style="display: none;">
@@ -107,6 +112,18 @@ require_once 'conn.php';
                 </div>
 
 </div>
+
+<script>
+$(function(){
+    $("input[name='showDiv']").click(function(){
+        if($("#sim").is(":checked")){
+            $("#formulario").show();
+        }else{
+            $("#formulario").hide();
+        }
+    });
+});
+</script>
             <div class="btn-group" role="group">
                 <button id="btnLimpar" type="reset" class="btn"><i class="bi bi-x-circle-fill"> Limpar</i></button>
                 <button id="btnEnviar" type="submit" class="btn"><i class="bi bi-check-circle-fill"> Enviar</i></button>
