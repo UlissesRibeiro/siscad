@@ -1,6 +1,7 @@
 <?php
 
 require_once 'conn.php';
+require_once 'cfg/nav.php';
 
         $nome=$_POST['nome_usuario'];
         $sobrenome=$_POST['sobrenome_usuario'];
@@ -14,7 +15,9 @@ require_once 'conn.php';
         $count = $stmt->rowcount();
         //se cadastrado retorna a mensagem, com base na verificação da query
         if($count > 0){
-            echo "cpf cadastrado!";
+            echo "<h4 style='text-align:center;'>CPF já cadastrado em nossa base de dados!</h4>";
+            echo "<h5 style='text-align:center;'><a href='index.php' class='btn'
+                    style='background-color:aqua;color:black;border-color:black;'><i class='bi bi-house-fill'></i> Voltar</a></h5>";
         }
         //se não, avança no cadastro
         else{
@@ -25,9 +28,10 @@ require_once 'conn.php';
             $_POST['telefone_usuario'], $_POST['email_usuario'],$_POST['perfil_trabalho']]);
             
             if($resultSet){
-                echo "Os dados foram inseridos com sucesso.";
+               
+                echo "Os dados foram inseridos com sucesso";
                 }else{
-                echo "Ocorreu um erro e não foi possível inserir os dados.";
+                echo "<h4 style='text-align:center;'>Ocorreu um erro e não foi possível inserir os dados.</h4>";
                 }
                 //Destruindo o objecto statement e fechando a conexão
                 $stmt = null;

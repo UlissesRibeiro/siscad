@@ -52,11 +52,12 @@ $resultSet = $conn->query($instrucaoSQL);
 ?>
                             <tr>
                                 
-                                <td><?php echo $row['nome_usuario']; ?></td>
-                                <td><?php echo $row['sobrenome_usuario']; ?></td>
+                                <td style="text-transform:capitalize;"><?php echo $row['nome_usuario']; ?></td>
+                                <td style="text-transform:capitalize;"><?php echo $row['sobrenome_usuario']; ?></td>
                                 <td><?php echo $row['cpf_usuario']; ?></td>
-                                <td><?php echo $row['telefone_usuario']; ?></td>
-                                <td><?php echo $row['email_usuario']; ?></td>
+                                <td><?php echo $row['telefone_usuario'].' '; ?><a href="https://wa.me/<?php echo $row['telefone_usuario'].' '; ?>"><i class="bi bi-whatsapp" style="color:green;"> </i></a> </td>
+                                <!--<td><?php //echo $row['telefone_usuario'].' '; ?></td>-->
+                                <td style="text-transform:lowercase;"><?php echo $row['email_usuario']; ?></td>
                                 <td><button class="btn" type="submit"><i class="bi bi-pencil-fill"></i></button></td>
                                 
                             </tr>

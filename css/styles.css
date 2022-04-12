@@ -47,5 +47,5 @@ button{
     width: ;
 }
 td{
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
