@@ -25,11 +25,10 @@ Sobre o banco, os seguintes campos vão ser unicos :
 
 <h4>Versões</h4>
 0.1
--Adicionado função em JQuery, para habilitar o formulário de cadastro de equipamentos com base na seleção do radio button!
--Adicionado função em JS, para habilitar os inputs dos equipamentos com base na seleção dos checkbox!
--Adicionado função em JQuery nos botões de cadastrar e pesquisa, para carregamento dos formulários na index!
+<li>-Adicionado função em JQuery, para habilitar o formulário de cadastro de equipamentos com base na seleção do radio button!</li>
+<li>-Adicionado função em JS, para habilitar os inputs dos equipamentos com base na seleção dos checkbox!</li>
+<li>-Adicionado função em JQuery nos botões de cadastrar e pesquisa, para carregamento dos formulários na index!</li>
 
 0.2
--Adicionado a verificação de CPF já cadastrado do usuário, sendo esse campo unico! As verificações de e-mail e telefone estão em desenvolvimento!
--Adicionado botão de link direto para whatsapp web na pagina lista.php responsavel por trazer os dados buscados, o botão foi adicionado ao lado do
-telefone do funcionário!
+<li>-Adicionado a verificação de CPF já cadastrado do usuário, sendo esse campo unico! As verificações de e-mail e telefone estão em desenvolvimento!</li>
+<li>-Adicionado botão de link direto para whatsapp web na pagina lista.php responsavel por trazer os dados buscados, o botão foi adicionado ao lado do telefone do funcionário!</li>
