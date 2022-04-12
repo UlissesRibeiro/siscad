@@ -21,7 +21,7 @@ require_once 'conn.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
 
 
-    <title>Sistema de Cadastro - v.0.1</title>
+    <title>Sistema de Cadastro - v.0.2</title>
     <script src="js/functions.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -29,7 +29,7 @@ require_once 'conn.php';
     <div class="container d-flex justify-content-center">
         <div>
 
-        <h1>Sistema de Cadastro - v.0.1</h1>
+        <h1>Sistema de Cadastro - v.0.2</h1>
         <!--<div class="btn-group container" role="group">
             <button type="submit" style="background-color:darkgreen;color:white;" id="btnCad" class="btn"><i class="bi bi-pencil-square"></i> Cadastrar</button>
             <button type="submit"  style="background-color:darkblue;color:white;" id="btnPes" class="btn"><i class="bi bi-search"></i> Pesquisar</button>
