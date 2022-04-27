@@ -25,7 +25,7 @@ require_once 'conn.php';
 </head>
 <body>
     <div class="container d-flex justify-content-center" style="padding-top: 20px;">
-    <form id="formCad" class="row g-3 " action="cadastra.php" method="post">
+    <form id="formCad" class="row g-3" action="cadastra.php" method="post">
         <h1></h1>
         <!-- Dados do usuario -->
         <div class="form-floating mb-3 col-md-6">
