@@ -30,57 +30,56 @@ require_once 'conn.php';
         <!-- Dados do usuario -->
         <div class="form-floating mb-3 col-md-6">
         <input class="form-control" type="text" name="nome_usuario" id="nome_usuario" placeholder="nome" minlength="2" maxlength="15" required>
-        <label for="nome_usuario">Nome</label>    
+        <label for="nome_usuario">* Nome</label>    
         </div>
 
         <div class="form-floating mb-3 col-md-6">
         <input class="form-control" type="text" name="sobrenome_usuario" id="sobrenome_usuario" placeholder="sobrenome" minlength="2" maxlength="45" required>
-        <label for="sobrenome_usuario">Sobrenome</label>    
+        <label for="sobrenome_usuario">* Sobrenome</label>    
         </div>
 
         <div class="form-floating mb-3 col-md-6">
         <input class="form-control" type="text" name="cpf_usuario" id="cpf_usuario" placeholder="apenas números" minlength="11" maxlength="11" required>
-        <label for="cpf_usuario"><i class="bi bi-credit-card-2-front-fill"> CPF</i></label>
+        <label for="cpf_usuario"><i class="bi bi-credit-card-2-front-fill">* CPF</i></label>
         </div>
 
         <div class="form-floating mb-3 col-md-6">
         <input class="form-control" type="email" name="email_usuario" id="email_usuario" placeholder="email@mail.com" required>
-        <label for="email_usuario"><i class="bi bi-envelope-fill"> E-mail</i></label>
+        <label for="email_usuario"><i class="bi bi-envelope-fill">* E-mail</i></label>
         </div>
 
         <div class="form-floating mb-3 col-md-6">
         <input class="form-control" type="tel" name="telefone_usuario" id="telefone_usuario" placeholder="ddd+telefone" minlength="11" maxlength="11" required>
-        <label for="telefone_usuario"><i class="bi bi-telephone-fill"> Telefone</i></label>
+        <label for="telefone_usuario"><i class="bi bi-telephone-fill">* Telefone</i></label>
         </div>
         <br><br>
         <div id="perfil">
-        <label for="perfil">Perfil de trabalho : </label>
-        <input type="radio" name="perfil_trabalho" id="hibrido" value="hibrido">
+            
+        <label for="perfil">* Perfil de trabalho : </label>
+        <input type="radio" name="perfil_trabalho" id="hibrido" value="hibrido" required>
         <label style="text-transform: capitalize;" for="hibrido">hibrido</label>
 
-        <input type="radio" name="perfil_trabalho" id="presencial" value="presencial">
+        <input type="radio" name="perfil_trabalho" id="presencial" value="presencial" required>
         <label style="text-transform: capitalize;" for="presencial">presencial</label>
 
-        <input type="radio" name="perfil_trabalho" id="home-office" value="home-office">
+        <input type="radio" name="perfil_trabalho" id="home-office" value="home-office" required>
         <label style="text-transform: capitalize;" for="home-office">home-office</label>
+
         </div>
+        
         <?php
 
         ?>
         <!-- chamada para função de habilitar cadastro de equipamentos -->
-        <p>Deseja cadastrar equipamentos?
-            <!-- bloco de codigo se for usar checkbox -->
-            <!--<input type="checkbox" name="sim" id="sim" value="sim" onclick="cadastraEquipamento()">
-            <label for="sim">SIM</label>
-            <input type="checkbox" name="nao" id="nao" value="nao">
-            <label for="nao">NÃO</label></p>-->
-
-            <label for="">Sim</label> <input type="radio" name="showDiv" id="sim">
-            <label for="">Não</label> <input type="radio" name="showDiv" id="nao">
+        <p>* Deseja cadastrar equipamentos?
+            <label for="">Sim</label> <input type="radio" name="showDiv" id="sim" required>
+            <label for="">Não</label> <input type="radio" name="showDiv" id="nao" required>
+            <br><span style="font-style:italic;color:red;font-size:14px;">*Campos obrigatórios</span>
 
             <!-- Formulario de equipamentos -->
             <div id="formulario" class="row" style="display: none;">
                 <p>Quais equipamentos deseja cadastrar ?</p>
+                <span style="font-size:14px;">Se seleciando algum equipamento, é obrigatório a inserção do mesmo!</span><br>
                 <div class="col-md-6">
                 <input type="checkbox" name="habilitaMaquina" id="habilitaMaquina"  onclick="desabilitarMaquina('sim')">
                 <label for="maquina">Maquina : </label>
