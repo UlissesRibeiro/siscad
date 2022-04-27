@@ -9,7 +9,14 @@ require_once 'cfg/nav.php';
         $telefone=$_POST['telefone_usuario'];
         $email=$_POST['email_usuario'];
         $perfil=$_POST['perfil_trabalho'];
-        //bloco para verificar se o cpf já está cadastrado
+        //equipamentos
+        $maquina=$_POST['maquina'];
+        $monitor=$_POST['monitor'];
+        $mouse=$_POST['mouse'];
+        $teclado=$_POST['teclado'];
+        $estabilizador=$_POST['estabilizador'];
+
+        //query para verificar se o cpf já está cadastrado
         $stmt = $conn->prepare("SELECT * from funcionarios where cpf_usuario = $cpf");
         $stmt->execute();
         $count = $stmt->rowcount();
@@ -33,11 +40,23 @@ require_once 'cfg/nav.php';
                 }else{
                 echo "<h4 style='text-align:center;'>Ocorreu um erro e não foi possível inserir os dados.</h4>";
                 }
+                
+                //query para cadastro de equipamentos
+                $stmtEquip = $conn->prepare("INSERT INTO equipamento (maquina,monitor,mouse,teclado,estabilizador) values(?,?,?,?,?)");
+                $cadEquip = $stmtEquip->execute([$_POST['maquina'],$_POST['monitor'],$_POST['mouse'],$_POST['teclado'],$_POST['estabilizador']]);
+                if($cadEquip){
+                        echo"equipamento cadastrado";
+                }else{
+                        echo "equipamento não cadastrado";
+                }
                 //Destruindo o objecto statement e fechando a conexão
+                $stmtEquip = null;
                 $stmt = null;
                 $conn = null;
 
         }
+
+
 
 
 
