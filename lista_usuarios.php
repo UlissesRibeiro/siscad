@@ -8,6 +8,7 @@ $nome=$_POST['nome_usuario'];
 $instrucaoSQL ="SELECT * From funcionarios where nome_usuario='$nome'";
  //"SELECT 'ulisses', maquina,monitor from funcionarios f inner join equipamento e on f.id =e.id";
 
+
 $resultSet = $conn->query($instrucaoSQL);
 
 ?>
@@ -46,6 +47,7 @@ $resultSet = $conn->query($instrucaoSQL);
                                         <th scope="col">Telefone
                                         <th scope="col">E-mail
                                         <th scope="col">Editar
+                                        <th scope="col">Deletar
                                         <th scope="col">Patrimonios
                                         
                                     </tr>
@@ -54,19 +56,21 @@ $resultSet = $conn->query($instrucaoSQL);
                                 
 <?php
     while ($row = $resultSet->fetch(PDO::FETCH_ASSOC)):
+        
            
 ?>
                             <tr>
                                 
                                 <td style="text-transform:capitalize;"><?php echo $row['nome_usuario']; ?></td>
-                                <!--<td style="text-transform:capitalize;"><?php echo $row['maquina']; ?></td>
-                                <td style="text-transform:capitalize;"><?php echo $row['monitor']; ?></td>-->
+                                
+
                                 <td style="text-transform:capitalize;"><?php echo $row['sobrenome_usuario']; ?></td>
                                 <td><?php echo $row['cpf_usuario']; ?></td>
                                 <td><?php echo $row['telefone_usuario'].' '; ?><a href="https://wa.me/<?php echo $row['telefone_usuario'].' '; ?>"><i class="bi bi-whatsapp" style="color:green;"> </i></a> </td>
                                 <!--<td><?php //echo $row['telefone_usuario'].' '; ?></td>-->
                                 <td style="text-transform:lowercase;"><?php echo $row['email_usuario']; ?></td>
-                                <td><button class="btn" type="submit"><i class="bi bi-pencil-fill"></i></button></td>
+                                <td><a  name="id" href="edita.php?id=<?php echo $row['id']; ?>" class="btn"><i class="bi bi-pencil-fill"></i></a></td>
+                                <td><button class="btn"><i class="bi bi-x-circle-fill"></i></button>
                                 <td style="display:flex;justify-content:center;"><button class="btn" type="submit" id="myBtn"
                                 onclick="mostrarEquips()">
                                     <i class="bi bi-eye-fill"></i></button></td>
@@ -103,20 +107,25 @@ $BuscaEquip = $conn->query($equipamentos);
         </tr>
     </thead>
 <tbody >
-    
+
 <?php
  while ($row = $BuscaEquip->fetch(PDO::FETCH_ASSOC)):
 ?>
     <tr >
         <td ><?php echo $row['maquina']; ?></td>
+
+        
         <td ><?php echo $row['monitor']; ?></td>
+
         <td ><?php echo $row['mouse']; ?></td>
+
         <td ><?php echo $row['teclado']; ?></td>
+
         <td ><?php echo $row['estabilizador']; ?></td>
         <td><button class="btn" type="submit"><i class="bi bi-pencil-fill"></i></button></td>
         <td><button class="btn" onclick="ocultarEquips()"><i class="bi bi-eye-slash-fill"></i></button></td>
-    </tr>
 
+    </tr>
 <?php
 endwhile;
 ?>
@@ -126,6 +135,8 @@ endwhile;
 </div>
 
 <script>
+
+//alert("Ao alterar algum dado, lembre-se de salvar a alteração!");
 
 function mostrarEquips(){
     document.getElementById('equips').style.display ='block';

@@ -25,9 +25,7 @@ require_once 'conn.php';
 </head>
 <body>
 <div class="container d-flex justify-content-center" style="padding-top: 20px;">
-    <form id="formCad" class="row g-3 " action="lista.php" method="post">
-            <h1></h1>
-            <form id="formPesquisa" class="container row g-3 " action="lista.php" method="post">
+            <form id="formCad" class="container row g-3 " action="lista_usuarios.php" method="post">
             <div class="form-floating mb-3 col-md-12">
                 <input class="form-control" type="text" name="nome_usuario" id="nome_usuario" placeholder="nome" minlength="1" maxlength="15" required>
                 <label for="nome_usuario">Nome</label> 
@@ -45,58 +43,16 @@ require_once 'conn.php';
                 $resultSet = $conn->query($instrucaoSQL);?>
 
        
-                
+        
 
+<?php
+while ($row = $resultSet->fetch(PDO::FETCH_ASSOC)):
+?>
 
-<!--<div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3>Listagem de Funcionários</h3>
-                            </div>
-                        <div class="card-body" >
-                            <table class="table" >
-                                <thead class="thead-dark" >
-                                    <tr>
-                                        <th scope="col">Nome
-                                        <th scope="col">Sobrenome
-                                        <th scope="col">CPF
-                                        <th scope="col">Telefone
-                                        <th scope="col">E-mail
-                                        <th scope="col">Editar
-                                        
-                                    </tr>
-                                </thead>
-                            <tbody>-->
+<?php
+endwhile;
+?>
 
-        <?php
-        while ($row = $resultSet->fetch(PDO::FETCH_ASSOC)):
-    ?>
-                                <!--<tr>
-                                    
-                                    <td><?php echo $row['nome_usuario']; ?></td>
-                                    <td><?php echo $row['sobrenome_usuario']; ?></td>
-                                    <td><?php echo $row['cpf_usuario']; ?></td>
-                                    <td><?php echo $row['telefone_usuario']; ?></td>
-                                    <td><?php echo $row['email_usuario']; ?></td>
-
-                                    
-                                </tr>-->
-    <?php
-    endwhile;
-    ?>
-                            <!--</tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>-->
 
         
     </form>

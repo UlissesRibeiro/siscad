@@ -14,6 +14,8 @@
 }*/
 
 
+
+
 //habilitar equipamento a ser cadastrado
 function desabilitarMaquina(valor){
     var status = document.getElementById("maquina").disabled;
